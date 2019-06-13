@@ -1,0 +1,162 @@
+<!-- memo -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>メモ</title>
+	<style type="text/css">
+		#site-box {
+			width:450px;
+			margin: 0 auto 0 auto;
+		}
+		.con{
+			font-size:small;
+			vertical-align:top;
+			padding-top:10px;
+			padding-left:10px;
+			width:320px;
+			height:320px;
+			border-style:solid;
+			border-width:thin;
+			border-color:#3399cc;
+		}
+		.b-befu {
+			padding:5px 7px 2px;
+			border-width:0px 0px 0px 10px;
+			border-style:solid;
+			border-color:green;
+			background-color:#badcad;
+			border-color:#0b3a68;
+			background-color:#7faedc;
+		}
+	</style>
+</head>
+<body>
+<div id="site-box">
+  <p>メモ</p>
+  <hr>
+  <dl>
+    <dt>vi encode</dt>
+      <ul>
+        <li>:e ++enc=euc-jp</li>
+          <ul>
+            <li>cp932  Japanese (Windows only)</li>
+            <li>euc-jp  Japanese (Unix only)</li>
+            <li>sjis  Japanese (Unix only)</li>
+            <li>utf-8  32 bit UTF-8 encoded Unicode</li>
+          </ul>
+      </ul>
+  </dl>
+  <hr>
+  <dl>
+    <dt>iconv</dt>
+      <ul>
+        <li>iconv -f ENCODING -t ENCODING INPUTFILE</li>
+      </ul>
+      <ul>
+        <li>-l : encoding list</li>
+        <li>-o OUTPUTFILE : output</li>
+      </ul>
+  </dl>
+  <hr>
+  <dl>
+    <dt>xxd</dt>
+      <ul>
+        <li>vi -b FILENAME</li>
+        <li>:%!xxd</li>
+        <li>:%!xxd -r</li>
+      </ul>
+  </dl>
+  <hr>
+  <dl>
+    <dt>vi replacement</dt>
+      <ul>
+        <li>:%s/AAA/BBB/gc</li>
+      </ul>
+  </dl>
+  <hr>
+  <dl>
+    <dt>javap</dt>
+      <ul>
+        <li>javap -v CLASSNAME (Not FileName)</li>
+      </ul>
+  </dl>
+  <hr>
+  <dl>
+    <dt>shell test</dt>
+      <ul>
+        <li>test A -eq B (A＝B ?)</li>
+        <li>test A -ne B (A≠B ?)</li>
+        <li>test A -lt B (A＜B ?)</li>
+        <li>test A -gt B (A＞B ?)</li>
+        <li>test A -le B (A≦B ?)</li>
+        <li>test A -ge B (A≧B ?)</li>
+      </ul>
+  </dl>
+  <hr>
+  <dl>
+    <dt>shell file existence check option</dt>
+      <ul>
+        <li>-e : file existence check</li>
+        <li>-f : file judge</li>
+        <li>-e : directory judge</li>
+      </ul>
+  </dl>
+  <hr>
+  <dl>
+    <dt>yum</dt>
+      <ul>
+        <li>open ssl : export CURL_CA_BUNDLE=$PATH/xxxx.cer</li>
+        <li>install  : yum install $SoftWareName</li>
+        <li>clean pk : yum clean packages</li>
+        <li>software update : yum update $SoftWareName</li>
+        <li>software remove : yum remove $SoftWareName</li>
+        <li>list  : yum list</li>
+        <li>installed list  : yum list installed</li>
+        <li>list update     : yum list updates</li>
+      </ul>
+  </dl>
+  <hr>
+  <dl>
+    <dt>rpm package-cleanup</dt>
+      <ul>
+        <li>rpm -q kernel</li>
+        <li>package-cleanup --oldkernels --count 1</li>
+      </ul>
+  </dl>
+  <hr>
+  <dl>
+    <dt>ImageMagick</dt>
+      <ul>
+        <li>image file diff</li>
+        <li>compare -metric AE img1.png img2 diff.png</li>
+      </ul>
+  </dl>
+  <hr>
+  <dl>
+    <dt>No history</dt>
+      <ul>
+        <li>HISTIGNORE=*;history -d `history|awk '{a=$1;}END{print a;}'`</li>
+        <li>unset HISTIGNORE</li>
+      </ul>
+  </dl>
+  <hr>
+  <dl>
+    <dt>Tree command</dt>
+      <ul>
+        <li>pwd;find . |sort |sed '1d;s/^¥.//;s/¥/¥([^/]*¥)$/|--¥1/;s/¥/[^/|]*/|  /g'</li>
+      </ul>
+  </dl>
+  <hr>
+  <dl>
+      <dt>BackSpace ^H</dt>
+      <ul>
+        <li>stty erase ^H</li>
+      </ul>
+  </dl>
+  <hr>
+</div>
+</body>
+</html>
